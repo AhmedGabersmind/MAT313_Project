@@ -1,10 +1,8 @@
-// Turn text like "x^4-11x+8" into a function of x
 function makeFn(text) {
   let code = text.replaceAll("^", "**").replace(/(\d)x/g, "$1*x");
   return new Function("x", "return " + code + ";");
 }
 
-// Simple derivative helpers using a small step h
 function df(f, x) {
   let h = 0.0001;
   return (f(x + h) - f(x - h)) / (2 * h);
@@ -42,5 +40,4 @@ function checkGuess() {
     ratio < 1 ? `Convergence  guaranteed (ratio = ${ratio.toFixed(4)})` : `Convergence not guaranteede (ratio = ${ratio.toFixed(4)})`;
 }
 
-// Fill the table right away when the page opens
 calculate();
