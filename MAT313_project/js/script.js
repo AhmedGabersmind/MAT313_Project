@@ -37,7 +37,7 @@ function checkGuess() {
   let x0 = parseFloat(document.getElementById("x0Input").value);
   let ratio = Math.abs((f(x0) * d2f(f, x0)) / (df(f, x0) ** 2));
   document.getElementById("result").textContent =
-    ratio < 1 ? `Convergence  guaranteed (ratio = ${ratio.toFixed(4)})` : `Convergence not guaranteede (ratio = ${ratio.toFixed(4)})`;
+    ratio < 1 ? `Convergence  guaranteed (ratio = ${ratio.toFixed(4)})` : `Convergence not guaranteed (ratio = ${ratio.toFixed(4)})`;
 }
 
 calculate();
